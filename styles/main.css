@@ -1,0 +1,213 @@
+/* ---------- Design tokens ---------- */
+:root {
+  --paper: #eef1ec;
+  --card: #fbfcfa;
+  --ink: #1d2a28;
+  --muted: #5f6f6b;
+  --line: #cdd6d0;
+  --accent: #0f6b5c;
+  --accent-ink: #ffffff;
+  --danger: #b3261e;
+  --font: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #141c1b;
+    --card: #1c2726;
+    --ink: #e6eeeb;
+    --muted: #93a5a0;
+    --line: #2f3f3c;
+    --accent: #4fc3ab;
+    --accent-ink: #0c1a17;
+    --danger: #ff8a80;
+  }
+}
+
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+input,
+button {
+  font-family: var(--font);
+  font-size: 1rem;
+}
+
+.app {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#summary {
+  min-height: 1.5rem;
+  margin: 0.25rem 0 1.5rem;
+  color: var(--muted);
+}
+
+/* ---------- Form ---------- */
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1 1 220px;
+  padding: 0.7rem 0.8rem;
+  color: inherit;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+}
+
+input.invalid {
+  border-color: var(--danger);
+}
+
+.error {
+  min-height: 1.4rem;
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: var(--danger);
+}
+
+/* ---------- Buttons ---------- */
+button {
+  padding: 0.6rem 1rem;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.ghost,
+.filters button,
+.actions button {
+  font-weight: 500;
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line);
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Filters ---------- */
+.filters {
+  display: flex;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.filters button.active {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+/* ---------- Task list ---------- */
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+  padding: 0.7rem 0.8rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--accent);
+  border-radius: 6px;
+}
+
+li.done {
+  border-left-color: var(--line);
+}
+
+li.done .text {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+li input[type="checkbox"] {
+  flex: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  accent-color: var(--accent);
+}
+
+.text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.actions button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.actions .delete:hover {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+.empty {
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  li {
+    flex-wrap: wrap;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taskboard — AUREX Week 4</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Taskboard</h1>
+      <p id="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="task-form" novalidate>
+      <label for="task-input">What needs doing?</label>
+      <div class="row">
+        <input id="task-input" type="text" maxlength="100" autocomplete="off" placeholder="e.g. Finish JavaScript exercises" required>
+        <button type="submit" id="submit-btn">Add task</button>
+        <button type="button" id="cancel-btn" class="ghost" hidden>Cancel</button>
+      </div>
+      <p id="error" class="error" role="alert"></p>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button data-filter="all" class="active">All</button>
+      <button data-filter="active">Active</button>
+      <button data-filter="completed">Completed</button>
+    </nav>
+
+    <ul id="task-list"></ul>
+    <p id="empty" class="empty" hidden></p>
+  </main>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

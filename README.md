@@ -1,9 +1,9 @@
 # React Task Manager (Part 1)
 
 **AUREX Full-Stack Internship | Month 2 | Week 1**
-
 **Name:** Maryam Butt
-**Live Demo:** https://aurex-web-internship-maryam-taskboard.vercel.app
+
+**Live Demo:** https://aurex-web-internship-maryam-taskboa.vercel.app
 ## Project Summary
 
 A component-driven task manager built with React and Vite. It is a rebuild of my Month 1 JavaScript Task Manager, now using components, props and the `useState` hook.
